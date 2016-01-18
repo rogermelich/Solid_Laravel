@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class InvoicesController extends Controller
 {
-    protected $invoiceRepo;
+    protected $repo;
 
     /**
      * InvoicesController constructor.
@@ -19,9 +19,9 @@ class InvoicesController extends Controller
      *
      * DEPENDENCI INJECTION
      */
-    public function __construct($invoiceRepo)
+    public function __construct(\RepositoryInterface $invoiceRepo)
     {
-        $this->invoiceRepo = $invoiceRepo;
+        $this->repo = $repo;
     }
 
     public function index()
@@ -30,9 +30,7 @@ class InvoicesController extends Controller
             return "Forbbiden";
         }
 
-        $database_invoices = invoiceRepo->getAllInvoicesFromDatabase();
-
-        $invoices = $this->transform($database_invoices);
+        $invoices = $this->transform($this->repo->all());
         return view('invoices', compact('invoices'));
 
         //$data['invoices'] = $invoices;
