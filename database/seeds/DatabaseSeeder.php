@@ -11,6 +11,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserTableSeeder::class);
+        $faker = Faker\Factory::create();
+        $this->seedInvoices($faker);
+    }
+
+
+    private function seedInvoices($faker){
+        foreach (range(0, 100) as $number) {
+            $invoice = new Invoices();
+
+            $invoice->name = $faker->name();
+            $invoice->totalAmount = $faker->randomNumber;
+            $invoice->save();
+
+        }
     }
 }
