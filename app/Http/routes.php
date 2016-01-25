@@ -16,6 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/',['as' => 'welcome', 'uses' => 'WelcomeController@index']);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -30,6 +32,8 @@ Route::get('/', function () {
 Route::group(['middleware' => 'web'], function () {
 
     Route::get('/invoices',['middleware' => 'auth'], 'InvoicesController@index');
+
+    Route::post('sendContactEmail', 'ContactEmailController@send');
 });
 
 Route::group(['middleware' => 'web'], function () {
@@ -39,5 +43,3 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 App::bind(App\Repositories\RepositoryInterface::class, App\Repositories\UserRepository::class);
-
-Route::post('sendContactEmail', 'ContactEmailController@send');
