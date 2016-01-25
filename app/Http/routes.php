@@ -39,3 +39,5 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 App::bind(App\Repositories\RepositoryInterface::class, App\Repositories\UserRepository::class);
+
+Route::post('sendContactEmail', 'ContactEmailController@send');
