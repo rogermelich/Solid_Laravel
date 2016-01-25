@@ -241,7 +241,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         <div class="col-lg-7">
             <h3>Drop Us A Line</h3>
             <br>
-            <form role="form" action="#" method="post" enctype="plain">
+            <form role="form" action="{{ url('sendContactEmail') }}" method="post" enctype="plain">
                 <div class="form-group">
                     <label for="name1">Your Name</label>
                     <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
