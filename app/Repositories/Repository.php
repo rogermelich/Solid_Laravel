@@ -9,6 +9,10 @@
 namespace app\Repositories;
 
 
+use Exception;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
+
 abstract class Repository implements RepositoryInterface
 {
 

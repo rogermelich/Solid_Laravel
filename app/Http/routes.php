@@ -11,8 +11,6 @@
 |
 */
 
-use App\Repositories\RepositoryInterface;
-use App\Repositories\UserRepository;
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,4 +38,4 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
 });
 
-App::bind(RepositoryInterface::class, UserRepository::class);
+App::bind(App\Repositories\RepositoryInterface::class, App\Repositories\UserRepository::class);

@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Invoices;
-use app\Repositories\InvoiceRepository;
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use app\Repositories\UserRepository;
 use Illuminate\Support\Facades\Auth;
 
 class InvoicesController extends Controller
@@ -19,7 +16,7 @@ class InvoicesController extends Controller
      *
      * DEPENDENCI INJECTION
      */
-    public function __construct(\RepositoryInterface $invoiceRepo)
+    public function __construct(UserRepository $repo)
     {
         $this->repo = $repo;
     }
@@ -30,7 +27,8 @@ class InvoicesController extends Controller
             return "Forbbiden";
         }
 
-        $invoices = $this->transform($this->repo->all());
+        $invoices = $this->repo->all();
+        $invoices = $this->transform($invoices);
         return view('invoices', compact('invoices'));
 
         //$data['invoices'] = $invoices;
