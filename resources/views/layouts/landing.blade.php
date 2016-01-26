@@ -285,9 +285,11 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         interval: 3500
     })
 </script>
-<script>
-    {{--{{ Session::get('sendContactEmail') }}--}}
-    swal("Good job!", "You clicked the button!", "success")
-</script>
+@if(session()->has('flash_message'))
+    <script>
+        {{--{{ Session::get('sendContactEmail') }}--}}
+        swal("Good job!", "You clicked the button!", "success")
+    </script>
+@endif
 </body>
 </html>
