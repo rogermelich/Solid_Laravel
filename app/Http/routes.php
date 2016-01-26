@@ -43,3 +43,15 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 App::bind(App\Repositories\RepositoryInterface::class, App\Repositories\UserRepository::class);
+
+Route::get('/apartat1', function () {
+    return view('apartat1');
+});
+
+Route::get('/apartat2', function () {
+    return view('apartat2');
+});
+
+Route::get('/apartat3', function () {
+    return view('apartat3');
+});

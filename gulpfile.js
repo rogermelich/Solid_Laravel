@@ -16,6 +16,8 @@ elixir(function(mix) {
     mix.less('admin-lte/AdminLTE.less');
     mix.less('bootstrap/bootstrap.less');
 
+    mix.copy('bower_components/jquery-pjax/jquery.pjax.js', 'resources/assets/js');
+
     mix.scripts([
         'sweetalert-dev.js'
     ]);
@@ -23,4 +25,5 @@ elixir(function(mix) {
     mix.styles([
         'sweetalert.css'
     ]);
+
 });
