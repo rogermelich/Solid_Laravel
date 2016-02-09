@@ -18,9 +18,9 @@
     <!-- iCheck -->
     <link href="{{ asset('/plugins/iCheck/square/blue.css') }}" rel="stylesheet" type="text/css" />
 
-    <link href="{{ asset('js/ace-extra.min.js') }}"/>
-    <link href="{{ asset('css/fonts.googleapis.com.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('css/ace.min.css') }}" rel="stylesheet" type="text/css" class="ace-main-stylesheet" id="main-ace-style" />
+    {{--<link href="{{ asset('js/ace-extra.min.js') }}"/>--}}
+    {{--<link href="{{ asset('css/fonts.googleapis.com.css') }}" rel="stylesheet" type="text/css"/>--}}
+    {{--<link href="{{ asset('css/ace.min.css') }}" rel="stylesheet" type="text/css" class="ace-main-stylesheet" id="main-ace-style" />--}}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

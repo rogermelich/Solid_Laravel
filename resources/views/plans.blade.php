@@ -237,5 +237,8 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+            <link href="{{ asset('js/ace-extra.min.js') }}"/>
+            <link href="{{ asset('css/fonts.googleapis.com.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('css/ace.min.css') }}" rel="stylesheet" type="text/css" class="ace-main-stylesheet" id="main-ace-style" />
 @endsection
