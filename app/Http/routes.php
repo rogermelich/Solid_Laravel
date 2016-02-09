@@ -55,3 +55,9 @@ Route::get('/apartat2', function () {
 Route::get('/apartat3', function () {
     return view('apartat3');
 });
+
+include 'test.routes.php';
+
+Route::get('/plans', function () {
+    return view('plans');
+});
